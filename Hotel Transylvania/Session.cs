@@ -15,6 +15,7 @@
             customerId = 0;
 
             username = "";
+            FullName = "";
             role = "";
         }
     }

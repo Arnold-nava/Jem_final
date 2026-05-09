@@ -41,6 +41,7 @@ namespace Hotel_Transylvania
                 {
                     Session.userId = Convert.ToInt32(reader["id"]);
                     Session.username = reader["username"].ToString();
+                    Session.FullName = reader["full_name"].ToString();
                     Session.role = reader["role"].ToString();
 
                     reader.Close();

@@ -32,27 +32,26 @@
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             btnLogout = new FontAwesome.Sharp.IconButton();
             btnBookNow = new FontAwesome.Sharp.IconButton();
-            btnPayments = new FontAwesome.Sharp.IconButton();
             btnBookings = new FontAwesome.Sharp.IconButton();
             btnDashboard = new FontAwesome.Sharp.IconButton();
             label1 = new Label();
             label2 = new Label();
             panel2 = new Panel();
-            dataGridView1 = new DataGridView();
-            dateTimePicker1 = new DateTimePicker();
-            label3 = new Label();
-            label5 = new Label();
+            txtSearch = new TextBox();
             panel3 = new Panel();
             iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             label6 = new Label();
+            label5 = new Label();
+            dgvBookings = new DataGridView();
+            dtpDate = new DateTimePicker();
             label4 = new Label();
-            textBox1 = new TextBox();
+            label3 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvBookings).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -61,7 +60,6 @@
             panel1.Controls.Add(iconPictureBox1);
             panel1.Controls.Add(btnLogout);
             panel1.Controls.Add(btnBookNow);
-            panel1.Controls.Add(btnPayments);
             panel1.Controls.Add(btnBookings);
             panel1.Controls.Add(btnDashboard);
             panel1.Controls.Add(label1);
@@ -100,6 +98,7 @@
             btnLogout.TabIndex = 1;
             btnLogout.Text = "Logout";
             btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Click += btnLogout_Click;
             // 
             // btnBookNow
             // 
@@ -117,23 +116,7 @@
             btnBookNow.TabIndex = 1;
             btnBookNow.Text = "Book now!";
             btnBookNow.UseVisualStyleBackColor = true;
-            // 
-            // btnPayments
-            // 
-            btnPayments.FlatAppearance.BorderSize = 0;
-            btnPayments.FlatStyle = FlatStyle.Flat;
-            btnPayments.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPayments.ForeColor = Color.LavenderBlush;
-            btnPayments.IconChar = FontAwesome.Sharp.IconChar.Wallet;
-            btnPayments.IconColor = Color.Black;
-            btnPayments.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnPayments.ImageAlign = ContentAlignment.MiddleLeft;
-            btnPayments.Location = new Point(11, 273);
-            btnPayments.Name = "btnPayments";
-            btnPayments.Size = new Size(191, 41);
-            btnPayments.TabIndex = 1;
-            btnPayments.Text = "Payments";
-            btnPayments.UseVisualStyleBackColor = true;
+            btnBookNow.Click += btnBookNow_Click;
             // 
             // btnBookings
             // 
@@ -146,12 +129,13 @@
             btnBookings.IconColor = Color.Black;
             btnBookings.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnBookings.ImageAlign = ContentAlignment.MiddleLeft;
-            btnBookings.Location = new Point(13, 329);
+            btnBookings.Location = new Point(13, 271);
             btnBookings.Name = "btnBookings";
             btnBookings.Size = new Size(191, 41);
             btnBookings.TabIndex = 1;
             btnBookings.Text = "Bookings";
             btnBookings.UseVisualStyleBackColor = false;
+            btnBookings.Click += btnBookings_Click;
             // 
             // btnDashboard
             // 
@@ -170,6 +154,7 @@
             btnDashboard.TabIndex = 1;
             btnDashboard.Text = "Dashboard";
             btnDashboard.UseVisualStyleBackColor = false;
+            btnDashboard.Click += btnDashboard_Click;
             // 
             // label1
             // 
@@ -196,10 +181,10 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
-            panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(txtSearch);
             panel2.Controls.Add(panel3);
-            panel2.Controls.Add(dataGridView1);
-            panel2.Controls.Add(dateTimePicker1);
+            panel2.Controls.Add(dgvBookings);
+            panel2.Controls.Add(dtpDate);
             panel2.Controls.Add(label4);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
@@ -208,42 +193,15 @@
             panel2.Size = new Size(664, 575);
             panel2.TabIndex = 4;
             // 
-            // dataGridView1
+            // txtSearch
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(19, 119);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(627, 337);
-            dataGridView1.TabIndex = 5;
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new Point(288, 83);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(148, 27);
-            dateTimePicker1.TabIndex = 4;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.Black;
-            label3.Location = new Point(288, 59);
-            label3.Name = "label3";
-            label3.Size = new Size(46, 21);
-            label3.TabIndex = 3;
-            label3.Text = "Date";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.Black;
-            label5.Location = new Point(63, 9);
-            label5.Name = "label5";
-            label5.Size = new Size(107, 30);
-            label5.TabIndex = 0;
-            label5.Text = "Reminder";
+            txtSearch.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtSearch.Location = new Point(22, 83);
+            txtSearch.Name = "txtSearch";
+            txtSearch.PlaceholderText = "Enter room number";
+            txtSearch.Size = new Size(230, 27);
+            txtSearch.TabIndex = 8;
+            txtSearch.TextChanged += txtSearch_TextChanged;
             // 
             // panel3
             // 
@@ -280,6 +238,33 @@
             label6.TabIndex = 0;
             label6.Text = "Please arrive on time for your check-in. Thank you!";
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.Black;
+            label5.Location = new Point(63, 9);
+            label5.Name = "label5";
+            label5.Size = new Size(107, 30);
+            label5.TabIndex = 0;
+            label5.Text = "Reminder";
+            // 
+            // dgvBookings
+            // 
+            dgvBookings.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvBookings.Location = new Point(19, 119);
+            dgvBookings.Name = "dgvBookings";
+            dgvBookings.Size = new Size(627, 337);
+            dgvBookings.TabIndex = 5;
+            // 
+            // dtpDate
+            // 
+            dtpDate.Location = new Point(288, 83);
+            dtpDate.Name = "dtpDate";
+            dtpDate.Size = new Size(148, 27);
+            dtpDate.TabIndex = 4;
+            dtpDate.ValueChanged += dtpDate_ValueChanged;
+            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -291,14 +276,16 @@
             label4.TabIndex = 3;
             label4.Text = "Search";
             // 
-            // textBox1
+            // label3
             // 
-            textBox1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(22, 83);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Enter room number";
-            textBox1.Size = new Size(230, 27);
-            textBox1.TabIndex = 8;
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.Black;
+            label3.Location = new Point(288, 59);
+            label3.Name = "label3";
+            label3.Size = new Size(46, 21);
+            label3.TabIndex = 3;
+            label3.Text = "Date";
             // 
             // BookingHistory
             // 
@@ -310,15 +297,16 @@
             Controls.Add(panel1);
             Name = "BookingHistory";
             Text = "BookingHistory";
+            Load += BookingHistory_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvBookings).EndInit();
             ResumeLayout(false);
         }
 
@@ -328,20 +316,19 @@
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private FontAwesome.Sharp.IconButton btnLogout;
         private FontAwesome.Sharp.IconButton btnBookNow;
-        private FontAwesome.Sharp.IconButton btnPayments;
         private FontAwesome.Sharp.IconButton btnBookings;
         private FontAwesome.Sharp.IconButton btnDashboard;
         private Label label1;
         private Label label2;
         private Panel panel2;
-        private DataGridView dataGridView1;
-        private DateTimePicker dateTimePicker1;
+        private DataGridView dgvBookings;
+        private DateTimePicker dtpDate;
         private Label label3;
         private Panel panel3;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
         private Label label5;
         private Label label6;
-        private TextBox textBox1;
+        private TextBox txtSearch;
         private Label label4;
     }
 }

@@ -164,5 +164,34 @@ namespace Hotel_Transylvania.Forms.customer
             frm.Show();
             this.Hide();
         }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            CustomerDashboard frm = new CustomerDashboard();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnBookNow_Click(object sender, EventArgs e)
+        {
+            Room frm = new Room();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnBookings_Click(object sender, EventArgs e)
+        {
+            BookingHistory frm = new BookingHistory();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            LoginForm login = new LoginForm();
+            login.Show();
+            this.Hide();
+        }
     }
 }

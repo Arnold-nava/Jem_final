@@ -32,7 +32,6 @@
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             btnLogout = new FontAwesome.Sharp.IconButton();
             btnBookNow = new FontAwesome.Sharp.IconButton();
-            btnPayments = new FontAwesome.Sharp.IconButton();
             btnBookings = new FontAwesome.Sharp.IconButton();
             btnDashboard = new FontAwesome.Sharp.IconButton();
             label1 = new Label();
@@ -55,7 +54,6 @@
             panel1.Controls.Add(iconPictureBox1);
             panel1.Controls.Add(btnLogout);
             panel1.Controls.Add(btnBookNow);
-            panel1.Controls.Add(btnPayments);
             panel1.Controls.Add(btnBookings);
             panel1.Controls.Add(btnDashboard);
             panel1.Controls.Add(label1);
@@ -94,6 +92,7 @@
             btnLogout.TabIndex = 1;
             btnLogout.Text = "Logout";
             btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Click += btnLogout_Click;
             // 
             // btnBookNow
             // 
@@ -112,23 +111,7 @@
             btnBookNow.TabIndex = 1;
             btnBookNow.Text = "Book now!";
             btnBookNow.UseVisualStyleBackColor = false;
-            // 
-            // btnPayments
-            // 
-            btnPayments.FlatAppearance.BorderSize = 0;
-            btnPayments.FlatStyle = FlatStyle.Flat;
-            btnPayments.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPayments.ForeColor = Color.LavenderBlush;
-            btnPayments.IconChar = FontAwesome.Sharp.IconChar.Wallet;
-            btnPayments.IconColor = Color.Black;
-            btnPayments.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnPayments.ImageAlign = ContentAlignment.MiddleLeft;
-            btnPayments.Location = new Point(11, 273);
-            btnPayments.Name = "btnPayments";
-            btnPayments.Size = new Size(191, 41);
-            btnPayments.TabIndex = 1;
-            btnPayments.Text = "Payments";
-            btnPayments.UseVisualStyleBackColor = true;
+            btnBookNow.Click += btnBookNow_Click;
             // 
             // btnBookings
             // 
@@ -140,12 +123,13 @@
             btnBookings.IconColor = Color.Black;
             btnBookings.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnBookings.ImageAlign = ContentAlignment.MiddleLeft;
-            btnBookings.Location = new Point(13, 329);
+            btnBookings.Location = new Point(11, 277);
             btnBookings.Name = "btnBookings";
             btnBookings.Size = new Size(191, 41);
             btnBookings.TabIndex = 1;
             btnBookings.Text = "Bookings";
             btnBookings.UseVisualStyleBackColor = true;
+            btnBookings.Click += btnBookings_Click;
             // 
             // btnDashboard
             // 
@@ -164,6 +148,7 @@
             btnDashboard.TabIndex = 1;
             btnDashboard.Text = "Dashboard";
             btnDashboard.UseVisualStyleBackColor = false;
+            btnDashboard.Click += btnDashboard_Click;
             // 
             // label1
             // 
@@ -268,7 +253,6 @@
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private FontAwesome.Sharp.IconButton btnLogout;
         private FontAwesome.Sharp.IconButton btnBookNow;
-        private FontAwesome.Sharp.IconButton btnPayments;
         private FontAwesome.Sharp.IconButton btnBookings;
         private FontAwesome.Sharp.IconButton btnDashboard;
         private Label label1;

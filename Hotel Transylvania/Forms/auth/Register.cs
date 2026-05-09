@@ -14,14 +14,6 @@ namespace Hotel_Transylvania.Forms.auth
             InitializeComponent();
         }
 
-
-        private void linkLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            LoginForm login = new LoginForm();
-            login.Show();
-            this.Hide();
-        }
-
         private void btnRegister_Click(object sender, EventArgs e)
         {
             string fullName = txtFullName.Text.Trim();
@@ -40,7 +32,7 @@ namespace Hotel_Transylvania.Forms.auth
             {
                 db.Open();
 
-                string checkQuery = "SELECT COUNT(*) FROM users WHERE username = @username OR email = @email";
+                string checkQuery = "SELECT COUNT(*) FROM users WHERE username=@username OR email=@email";
                 MySqlCommand checkCmd = new MySqlCommand(checkQuery, db.Connection);
                 checkCmd.Parameters.AddWithValue("@username", username);
                 checkCmd.Parameters.AddWithValue("@email", email);
@@ -53,19 +45,33 @@ namespace Hotel_Transylvania.Forms.auth
                     return;
                 }
 
-                string query = @"INSERT INTO users 
-                                (full_name, username, password, email, phone, role) 
-                                VALUES 
-                                (@fullName, @username, @password, @email, @phone, 'customer')";
+                string userQuery = @"
+                    INSERT INTO users
+                    (full_name, username, email, password, role)
+                    VALUES
+                    (@fullName, @username, @email, @password, 'customer')
+                ";
 
-                MySqlCommand cmd = new MySqlCommand(query, db.Connection);
-                cmd.Parameters.AddWithValue("@fullName", fullName);
-                cmd.Parameters.AddWithValue("@username", username);
-                cmd.Parameters.AddWithValue("@password", password);
-                cmd.Parameters.AddWithValue("@email", email);
-                cmd.Parameters.AddWithValue("@phone", phone);
+                MySqlCommand userCmd = new MySqlCommand(userQuery, db.Connection);
+                userCmd.Parameters.AddWithValue("@fullName", fullName);
+                userCmd.Parameters.AddWithValue("@username", username);
+                userCmd.Parameters.AddWithValue("@email", email);
+                userCmd.Parameters.AddWithValue("@password", password);
+                userCmd.ExecuteNonQuery();
 
-                cmd.ExecuteNonQuery();
+                int userId = Convert.ToInt32(userCmd.LastInsertedId);
+
+                string customerQuery = @"
+                    INSERT INTO customers
+                    (user_id, contact_number, address)
+                    VALUES
+                    (@userId, @phone, '')
+                ";
+
+                MySqlCommand customerCmd = new MySqlCommand(customerQuery, db.Connection);
+                customerCmd.Parameters.AddWithValue("@userId", userId);
+                customerCmd.Parameters.AddWithValue("@phone", phone);
+                customerCmd.ExecuteNonQuery();
 
                 MessageBox.Show("Account created successfully!");
 
@@ -81,6 +87,18 @@ namespace Hotel_Transylvania.Forms.auth
             {
                 db.Close();
             }
+        }
+
+        private void linkLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LoginForm login = new LoginForm();
+            login.Show();
+            this.Hide();
+        }
+
+        private void Register_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
