@@ -29,137 +29,130 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            iconButton5 = new FontAwesome.Sharp.IconButton();
-            iconButton4 = new FontAwesome.Sharp.IconButton();
-            iconButton3 = new FontAwesome.Sharp.IconButton();
-            iconButton2 = new FontAwesome.Sharp.IconButton();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
+            btnRoomTier = new FontAwesome.Sharp.IconButton();
+            btnLogout = new FontAwesome.Sharp.IconButton();
+            btnRooms = new FontAwesome.Sharp.IconButton();
+            btnBooking = new FontAwesome.Sharp.IconButton();
+            btnDashboard = new FontAwesome.Sharp.IconButton();
             label1 = new Label();
             panel3 = new Panel();
-            dataGridView1 = new DataGridView();
+            dgvBookings = new DataGridView();
             label7 = new Label();
             panel2 = new Panel();
-            textBox1 = new TextBox();
-            dateTimePicker2 = new DateTimePicker();
-            dateTimePicker1 = new DateTimePicker();
-            comboBox2 = new ComboBox();
-            comboBox1 = new ComboBox();
-            button3 = new Button();
-            button4 = new Button();
-            button2 = new Button();
-            button1 = new Button();
-            label8 = new Label();
-            label9 = new Label();
-            label6 = new Label();
+            txtSearch = new TextBox();
+            cmbRoom = new ComboBox();
+            btnClear = new Button();
+            btnDelete = new Button();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            label10 = new Label();
-            comboBox3 = new ComboBox();
-            iconButton6 = new FontAwesome.Sharp.IconButton();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvBookings).BeginInit();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.LightCoral;
-            panel1.Controls.Add(iconButton6);
-            panel1.Controls.Add(iconButton5);
-            panel1.Controls.Add(iconButton4);
-            panel1.Controls.Add(iconButton3);
-            panel1.Controls.Add(iconButton2);
-            panel1.Controls.Add(iconButton1);
+            panel1.Controls.Add(btnRoomTier);
+            panel1.Controls.Add(btnLogout);
+            panel1.Controls.Add(btnRooms);
+            panel1.Controls.Add(btnBooking);
+            panel1.Controls.Add(btnDashboard);
             panel1.Controls.Add(label1);
             panel1.Location = new Point(1, -1);
             panel1.Name = "panel1";
             panel1.Size = new Size(218, 617);
             panel1.TabIndex = 1;
             // 
-            // iconButton5
+            // btnRoomTier
             // 
-            iconButton5.FlatAppearance.BorderSize = 0;
-            iconButton5.FlatStyle = FlatStyle.Flat;
-            iconButton5.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            iconButton5.IconChar = FontAwesome.Sharp.IconChar.DoorOpen;
-            iconButton5.IconColor = Color.Black;
-            iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton5.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton5.Location = new Point(11, 563);
-            iconButton5.Name = "iconButton5";
-            iconButton5.Size = new Size(191, 41);
-            iconButton5.TabIndex = 1;
-            iconButton5.Text = "Logout";
-            iconButton5.UseVisualStyleBackColor = true;
+            btnRoomTier.FlatAppearance.BorderSize = 0;
+            btnRoomTier.FlatStyle = FlatStyle.Flat;
+            btnRoomTier.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRoomTier.IconChar = FontAwesome.Sharp.IconChar.Hotel;
+            btnRoomTier.IconColor = Color.Black;
+            btnRoomTier.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnRoomTier.ImageAlign = ContentAlignment.MiddleLeft;
+            btnRoomTier.Location = new Point(11, 240);
+            btnRoomTier.Name = "btnRoomTier";
+            btnRoomTier.Size = new Size(191, 41);
+            btnRoomTier.TabIndex = 2;
+            btnRoomTier.Text = "Room Tier";
+            btnRoomTier.UseVisualStyleBackColor = true;
+            btnRoomTier.Click += btnRoomTier_Click;
             // 
-            // iconButton4
+            // btnLogout
             // 
-            iconButton4.FlatAppearance.BorderSize = 0;
-            iconButton4.FlatStyle = FlatStyle.Flat;
-            iconButton4.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            iconButton4.IconChar = FontAwesome.Sharp.IconChar.Bed;
-            iconButton4.IconColor = Color.Black;
-            iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton4.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton4.Location = new Point(11, 237);
-            iconButton4.Name = "iconButton4";
-            iconButton4.Size = new Size(191, 41);
-            iconButton4.TabIndex = 1;
-            iconButton4.Text = "Rooms";
-            iconButton4.UseVisualStyleBackColor = true;
+            btnLogout.FlatAppearance.BorderSize = 0;
+            btnLogout.FlatStyle = FlatStyle.Flat;
+            btnLogout.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLogout.IconChar = FontAwesome.Sharp.IconChar.DoorOpen;
+            btnLogout.IconColor = Color.Black;
+            btnLogout.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnLogout.ImageAlign = ContentAlignment.MiddleLeft;
+            btnLogout.Location = new Point(11, 563);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new Size(191, 41);
+            btnLogout.TabIndex = 1;
+            btnLogout.Text = "Logout";
+            btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Click += btnLogout_Click;
             // 
-            // iconButton3
+            // btnRooms
             // 
-            iconButton3.FlatAppearance.BorderSize = 0;
-            iconButton3.FlatStyle = FlatStyle.Flat;
-            iconButton3.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            iconButton3.IconChar = FontAwesome.Sharp.IconChar.Wallet;
-            iconButton3.IconColor = Color.Black;
-            iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton3.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton3.Location = new Point(11, 181);
-            iconButton3.Name = "iconButton3";
-            iconButton3.Size = new Size(191, 41);
-            iconButton3.TabIndex = 1;
-            iconButton3.Text = "Payments";
-            iconButton3.UseVisualStyleBackColor = true;
+            btnRooms.FlatAppearance.BorderSize = 0;
+            btnRooms.FlatStyle = FlatStyle.Flat;
+            btnRooms.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRooms.IconChar = FontAwesome.Sharp.IconChar.Bed;
+            btnRooms.IconColor = Color.Black;
+            btnRooms.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnRooms.ImageAlign = ContentAlignment.MiddleLeft;
+            btnRooms.Location = new Point(11, 181);
+            btnRooms.Name = "btnRooms";
+            btnRooms.Size = new Size(191, 41);
+            btnRooms.TabIndex = 1;
+            btnRooms.Text = "Rooms";
+            btnRooms.UseVisualStyleBackColor = true;
+            btnRooms.Click += btnRooms_Click;
             // 
-            // iconButton2
+            // btnBooking
             // 
-            iconButton2.BackColor = Color.MistyRose;
-            iconButton2.FlatAppearance.BorderSize = 0;
-            iconButton2.FlatStyle = FlatStyle.Flat;
-            iconButton2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            iconButton2.IconChar = FontAwesome.Sharp.IconChar.ListAlt;
-            iconButton2.IconColor = Color.Black;
-            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton2.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton2.Location = new Point(11, 120);
-            iconButton2.Name = "iconButton2";
-            iconButton2.Size = new Size(191, 41);
-            iconButton2.TabIndex = 1;
-            iconButton2.Text = "Bookings";
-            iconButton2.UseVisualStyleBackColor = false;
+            btnBooking.BackColor = Color.MistyRose;
+            btnBooking.FlatAppearance.BorderSize = 0;
+            btnBooking.FlatStyle = FlatStyle.Flat;
+            btnBooking.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBooking.IconChar = FontAwesome.Sharp.IconChar.ListAlt;
+            btnBooking.IconColor = Color.Black;
+            btnBooking.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnBooking.ImageAlign = ContentAlignment.MiddleLeft;
+            btnBooking.Location = new Point(11, 120);
+            btnBooking.Name = "btnBooking";
+            btnBooking.Size = new Size(191, 41);
+            btnBooking.TabIndex = 1;
+            btnBooking.Text = "Bookings";
+            btnBooking.UseVisualStyleBackColor = false;
+            btnBooking.Click += btnBooking_Click;
             // 
-            // iconButton1
+            // btnDashboard
             // 
-            iconButton1.BackColor = Color.LightCoral;
-            iconButton1.FlatAppearance.BorderSize = 0;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.House;
-            iconButton1.IconColor = Color.Black;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton1.Location = new Point(11, 62);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(191, 41);
-            iconButton1.TabIndex = 1;
-            iconButton1.Text = "Dashboard";
-            iconButton1.UseVisualStyleBackColor = false;
+            btnDashboard.BackColor = Color.LightCoral;
+            btnDashboard.FlatAppearance.BorderSize = 0;
+            btnDashboard.FlatStyle = FlatStyle.Flat;
+            btnDashboard.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnDashboard.IconChar = FontAwesome.Sharp.IconChar.House;
+            btnDashboard.IconColor = Color.Black;
+            btnDashboard.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnDashboard.ImageAlign = ContentAlignment.MiddleLeft;
+            btnDashboard.Location = new Point(11, 62);
+            btnDashboard.Name = "btnDashboard";
+            btnDashboard.Size = new Size(191, 41);
+            btnDashboard.TabIndex = 1;
+            btnDashboard.Text = "Dashboard";
+            btnDashboard.UseVisualStyleBackColor = false;
+            btnDashboard.Click += btnDashboard_Click;
             // 
             // label1
             // 
@@ -175,20 +168,20 @@
             // panel3
             // 
             panel3.BackColor = Color.Snow;
-            panel3.Controls.Add(dataGridView1);
+            panel3.Controls.Add(dgvBookings);
             panel3.Controls.Add(label7);
             panel3.Location = new Point(551, 62);
             panel3.Name = "panel3";
             panel3.Size = new Size(546, 534);
             panel3.TabIndex = 12;
             // 
-            // dataGridView1
+            // dgvBookings
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(22, 36);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(506, 478);
-            dataGridView1.TabIndex = 1;
+            dgvBookings.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvBookings.Location = new Point(22, 36);
+            dgvBookings.Name = "dgvBookings";
+            dgvBookings.Size = new Size(506, 478);
+            dgvBookings.TabIndex = 1;
             // 
             // label7
             // 
@@ -204,20 +197,10 @@
             // panel2
             // 
             panel2.BackColor = Color.Snow;
-            panel2.Controls.Add(textBox1);
-            panel2.Controls.Add(dateTimePicker2);
-            panel2.Controls.Add(dateTimePicker1);
-            panel2.Controls.Add(comboBox3);
-            panel2.Controls.Add(comboBox2);
-            panel2.Controls.Add(comboBox1);
-            panel2.Controls.Add(button3);
-            panel2.Controls.Add(button4);
-            panel2.Controls.Add(button2);
-            panel2.Controls.Add(button1);
-            panel2.Controls.Add(label8);
-            panel2.Controls.Add(label9);
-            panel2.Controls.Add(label6);
-            panel2.Controls.Add(label10);
+            panel2.Controls.Add(txtSearch);
+            panel2.Controls.Add(cmbRoom);
+            panel2.Controls.Add(btnClear);
+            panel2.Controls.Add(btnDelete);
             panel2.Controls.Add(label5);
             panel2.Controls.Add(label4);
             panel2.Controls.Add(label3);
@@ -226,139 +209,57 @@
             panel2.Size = new Size(297, 540);
             panel2.TabIndex = 11;
             // 
-            // textBox1
+            // txtSearch
             // 
-            textBox1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox1.ForeColor = Color.Crimson;
-            textBox1.Location = new Point(13, 291);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(133, 27);
-            textBox1.TabIndex = 6;
+            txtSearch.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtSearch.ForeColor = Color.Crimson;
+            txtSearch.Location = new Point(13, 86);
+            txtSearch.Name = "txtSearch";
+            txtSearch.PlaceholderText = "Enter Customer Name";
+            txtSearch.Size = new Size(261, 27);
+            txtSearch.TabIndex = 5;
+            txtSearch.TextChanged += txtSearch_TextChanged;
             // 
-            // dateTimePicker2
+            // cmbRoom
             // 
-            dateTimePicker2.Location = new Point(148, 222);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(126, 27);
-            dateTimePicker2.TabIndex = 5;
+            cmbRoom.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            cmbRoom.ForeColor = Color.Crimson;
+            cmbRoom.FormattingEnabled = true;
+            cmbRoom.Location = new Point(13, 145);
+            cmbRoom.Name = "cmbRoom";
+            cmbRoom.Size = new Size(261, 28);
+            cmbRoom.TabIndex = 4;
+            cmbRoom.Tag = "";
             // 
-            // dateTimePicker1
+            // btnClear
             // 
-            dateTimePicker1.Location = new Point(13, 222);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(118, 27);
-            dateTimePicker1.TabIndex = 5;
+            btnClear.BackColor = Color.LavenderBlush;
+            btnClear.FlatAppearance.BorderSize = 2;
+            btnClear.FlatStyle = FlatStyle.Flat;
+            btnClear.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnClear.ForeColor = SystemColors.ButtonShadow;
+            btnClear.Location = new Point(148, 196);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(129, 40);
+            btnClear.TabIndex = 3;
+            btnClear.Text = "CLEAR";
+            btnClear.UseVisualStyleBackColor = false;
+            btnClear.Click += btnClear_Click;
             // 
-            // comboBox2
+            // btnDelete
             // 
-            comboBox2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            comboBox2.ForeColor = Color.Crimson;
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(13, 145);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(261, 28);
-            comboBox2.TabIndex = 4;
-            comboBox2.Tag = "";
-            // 
-            // comboBox1
-            // 
-            comboBox1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            comboBox1.ForeColor = Color.Crimson;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(13, 85);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(261, 28);
-            comboBox1.TabIndex = 4;
-            comboBox1.Tag = "";
-            // 
-            // button3
-            // 
-            button3.BackColor = Color.LavenderBlush;
-            button3.FlatAppearance.BorderSize = 2;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.ForeColor = SystemColors.ButtonShadow;
-            button3.Location = new Point(148, 479);
-            button3.Name = "button3";
-            button3.Size = new Size(129, 40);
-            button3.TabIndex = 3;
-            button3.Text = "CLEAR";
-            button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            button4.BackColor = Color.LavenderBlush;
-            button4.FlatAppearance.BorderSize = 2;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button4.ForeColor = Color.Crimson;
-            button4.Location = new Point(13, 479);
-            button4.Name = "button4";
-            button4.Size = new Size(129, 40);
-            button4.TabIndex = 3;
-            button4.Text = "DELETE";
-            button4.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.LavenderBlush;
-            button2.FlatAppearance.BorderSize = 2;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.Crimson;
-            button2.Location = new Point(148, 419);
-            button2.Name = "button2";
-            button2.Size = new Size(129, 40);
-            button2.TabIndex = 3;
-            button2.Text = "UPDATE";
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.Crimson;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(13, 419);
-            button1.Name = "button1";
-            button1.Size = new Size(129, 40);
-            button1.TabIndex = 3;
-            button1.Text = "+ ADD";
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.ForeColor = Color.PaleVioletRed;
-            label8.Location = new Point(148, 199);
-            label8.Name = "label8";
-            label8.Size = new Size(80, 20);
-            label8.TabIndex = 0;
-            label8.Text = "Check Out";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.ForeColor = Color.PaleVioletRed;
-            label9.Location = new Point(13, 268);
-            label9.Name = "label9";
-            label9.Size = new Size(106, 20);
-            label9.TabIndex = 0;
-            label9.Text = "Total Amount";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.PaleVioletRed;
-            label6.Location = new Point(13, 199);
-            label6.Name = "label6";
-            label6.Size = new Size(68, 20);
-            label6.TabIndex = 0;
-            label6.Text = "Check In";
+            btnDelete.BackColor = Color.LavenderBlush;
+            btnDelete.FlatAppearance.BorderSize = 2;
+            btnDelete.FlatStyle = FlatStyle.Flat;
+            btnDelete.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnDelete.ForeColor = Color.Crimson;
+            btnDelete.Location = new Point(13, 196);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(129, 40);
+            btnDelete.TabIndex = 3;
+            btnDelete.Text = "DELETE";
+            btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click_1;
             // 
             // label5
             // 
@@ -378,9 +279,9 @@
             label4.ForeColor = Color.PaleVioletRed;
             label4.Location = new Point(13, 62);
             label4.Name = "label4";
-            label4.Size = new Size(77, 20);
+            label4.Size = new Size(55, 20);
             label4.TabIndex = 0;
-            label4.Text = "Customer";
+            label4.Text = "Search";
             // 
             // label3
             // 
@@ -404,44 +305,6 @@
             label2.TabIndex = 10;
             label2.Text = "Booking Management";
             // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.ForeColor = Color.PaleVioletRed;
-            label10.Location = new Point(13, 336);
-            label10.Name = "label10";
-            label10.Size = new Size(53, 20);
-            label10.TabIndex = 0;
-            label10.Text = "Status";
-            // 
-            // comboBox3
-            // 
-            comboBox3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            comboBox3.ForeColor = Color.Crimson;
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(13, 359);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(261, 28);
-            comboBox3.TabIndex = 4;
-            comboBox3.Tag = "";
-            // 
-            // iconButton6
-            // 
-            iconButton6.FlatAppearance.BorderSize = 0;
-            iconButton6.FlatStyle = FlatStyle.Flat;
-            iconButton6.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            iconButton6.IconChar = FontAwesome.Sharp.IconChar.Hotel;
-            iconButton6.IconColor = Color.Black;
-            iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton6.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton6.Location = new Point(11, 296);
-            iconButton6.Name = "iconButton6";
-            iconButton6.Size = new Size(191, 41);
-            iconButton6.TabIndex = 2;
-            iconButton6.Text = "Room Tier";
-            iconButton6.UseVisualStyleBackColor = true;
-            // 
             // BookingManagement
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -454,11 +317,12 @@
             Controls.Add(panel1);
             Name = "BookingManagement";
             Text = "BookingManagement";
+            Load += BookingManagement_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvBookings).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ResumeLayout(false);
@@ -468,34 +332,23 @@
         #endregion
 
         private Panel panel1;
-        private FontAwesome.Sharp.IconButton iconButton5;
-        private FontAwesome.Sharp.IconButton iconButton4;
-        private FontAwesome.Sharp.IconButton iconButton3;
-        private FontAwesome.Sharp.IconButton iconButton2;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton btnLogout;
+        private FontAwesome.Sharp.IconButton btnRooms;
+        private FontAwesome.Sharp.IconButton btnBooking;
+        private FontAwesome.Sharp.IconButton btnDashboard;
         private Label label1;
         private Panel panel3;
-        private DataGridView dataGridView1;
+        private DataGridView dgvBookings;
         private Label label7;
         private Panel panel2;
-        private ComboBox comboBox1;
-        private Button button3;
-        private Button button4;
-        private Button button2;
-        private Button button1;
-        private Label label6;
+        private Button btnClear;
+        private Button btnDelete;
         private Label label4;
         private Label label3;
         private Label label2;
-        private ComboBox comboBox2;
+        private ComboBox cmbRoom;
         private Label label5;
-        private TextBox textBox1;
-        private DateTimePicker dateTimePicker2;
-        private DateTimePicker dateTimePicker1;
-        private Label label8;
-        private Label label9;
-        private ComboBox comboBox3;
-        private Label label10;
-        private FontAwesome.Sharp.IconButton iconButton6;
+        private FontAwesome.Sharp.IconButton btnRoomTier;
+        private TextBox txtSearch;
     }
 }

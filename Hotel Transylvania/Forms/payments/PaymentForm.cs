@@ -1,4 +1,5 @@
 ﻿using crud;
+using Hotel_Transylvania.Forms.customer;
 using MySql.Data.MySqlClient;
 using System;
 using System.Drawing;
@@ -26,10 +27,6 @@ namespace Hotel_Transylvania.Forms.payments
 
             LoadRoomInfo();
             CalculateTotal();
-
-            dtpCheckIn.ValueChanged += dtpCheckIn_ValueChanged;
-            dtpCheckOut.ValueChanged += dtpCheckOut_ValueChanged;
-            btnPayNow.Click += btnPayNow_Click;
         }
 
         private void LoadRoomInfo()
@@ -125,28 +122,8 @@ namespace Hotel_Transylvania.Forms.payments
             lblTotalAmount.Text = "₱" + totalAmount.ToString("N2");
         }
 
-        private void dtpCheckIn_ValueChanged(object sender, EventArgs e)
-        {
-            CalculateTotal();
-        }
 
-        private void dtpCheckOut_ValueChanged(object sender, EventArgs e)
-        {
-            CalculateTotal();
-        }
-
-        private void btnPayNow_Click(object sender, EventArgs e)
-        {
-            if (txtFullName.Text == "" || txtEmail.Text == "" || txtPhoneNumber.Text == "")
-            {
-                MessageBox.Show("Please fill out all guest information.");
-                return;
-            }
-
-            SaveBookingAndPayment();
-        }
-
-        private void SaveBookingAndPayment()
+        private void SaveBooking()
         {
             DBConnect db = new DBConnect();
 
@@ -158,9 +135,9 @@ namespace Hotel_Transylvania.Forms.payments
 
                 string bookingQuery = @"
                     INSERT INTO bookings
-                    (customer_id, room_id, check_in, check_out, total_amount, status)
+                    (customer_id, room_id, check_in, check_out, total_amount)
                     VALUES
-                    (@customerId, @roomId, @checkIn, @checkOut, @totalAmount, 'approved')
+                    (@customerId, @roomId, @checkIn, @checkOut, @totalAmount)
                 ";
 
                 MySqlCommand bookingCmd = new MySqlCommand(bookingQuery, db.Connection);
@@ -173,18 +150,6 @@ namespace Hotel_Transylvania.Forms.payments
 
                 int bookingId = Convert.ToInt32(bookingCmd.LastInsertedId);
 
-                string paymentQuery = @"
-                    INSERT INTO payments
-                    (booking_id, amount, payment_method, status)
-                    VALUES
-                    (@bookingId, @amount, 'Cash', 'paid')
-                ";
-
-                MySqlCommand paymentCmd = new MySqlCommand(paymentQuery, db.Connection);
-                paymentCmd.Parameters.AddWithValue("@bookingId", bookingId);
-                paymentCmd.Parameters.AddWithValue("@amount", totalAmount);
-                paymentCmd.ExecuteNonQuery();
-
                 string updateRoomQuery = @"
                     UPDATE rooms
                     SET status = 'occupied'
@@ -196,8 +161,9 @@ namespace Hotel_Transylvania.Forms.payments
                 updateRoomCmd.ExecuteNonQuery();
 
                 MessageBox.Show("Payment successful! Booking confirmed.");
-
-                // Later: open SuccessForm and send email here
+                 Success frm = new Success(bookingId);
+                 frm.Show();
+                 this.Hide();
             }
             catch (Exception ex)
             {
@@ -207,6 +173,34 @@ namespace Hotel_Transylvania.Forms.payments
             {
                 db.Close();
             }
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Room frm = new Room();
+            frm.Show();
+            this.Close();
+        }
+
+        private void btnPayNow_Click(object sender, EventArgs e)
+        {
+            if (txtFullName.Text.Trim() == "" || txtEmail.Text.Trim() == "")
+            {
+                MessageBox.Show("Please enter full name and email.");
+                return;
+            }
+
+            SaveBooking();
+        }
+
+        private void dtpCheckIn_ValueChanged_1(object sender, EventArgs e)
+        {
+            CalculateTotal();
+        }
+
+        private void dtpCheckOut_ValueChanged(object sender, EventArgs e)
+        {
+            CalculateTotal();
         }
     }
 }

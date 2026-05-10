@@ -41,6 +41,8 @@
             dtpCheckOut = new DateTimePicker();
             dtpCheckIn = new DateTimePicker();
             lblNight = new Label();
+            lblCapacity = new Label();
+            label10 = new Label();
             label9 = new Label();
             lblPrice = new Label();
             label6 = new Label();
@@ -57,8 +59,6 @@
             label16 = new Label();
             label3 = new Label();
             label2 = new Label();
-            label10 = new Label();
-            lblCapacity = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picRoom).BeginInit();
@@ -80,6 +80,7 @@
             btnBack.TabIndex = 0;
             btnBack.Text = "Back";
             btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
             // 
             // label1
             // 
@@ -136,6 +137,7 @@
             btnPayNow.TabIndex = 6;
             btnPayNow.Text = "Pay Now";
             btnPayNow.UseVisualStyleBackColor = false;
+            btnPayNow.Click += btnPayNow_Click;
             // 
             // txtPhoneNumber
             // 
@@ -203,6 +205,7 @@
             dtpCheckOut.Name = "dtpCheckOut";
             dtpCheckOut.Size = new Size(113, 27);
             dtpCheckOut.TabIndex = 3;
+            dtpCheckOut.ValueChanged += dtpCheckOut_ValueChanged;
             // 
             // dtpCheckIn
             // 
@@ -210,6 +213,7 @@
             dtpCheckIn.Name = "dtpCheckIn";
             dtpCheckIn.Size = new Size(113, 27);
             dtpCheckIn.TabIndex = 3;
+            dtpCheckIn.ValueChanged += dtpCheckIn_ValueChanged_1;
             // 
             // lblNight
             // 
@@ -220,6 +224,26 @@
             lblNight.Size = new Size(49, 20);
             lblNight.TabIndex = 2;
             lblNight.Text = "Night";
+            // 
+            // lblCapacity
+            // 
+            lblCapacity.AutoSize = true;
+            lblCapacity.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblCapacity.Location = new Point(391, 222);
+            lblCapacity.Name = "lblCapacity";
+            lblCapacity.Size = new Size(68, 20);
+            lblCapacity.TabIndex = 2;
+            lblCapacity.Text = "Capacity";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label10.Location = new Point(234, 222);
+            label10.Name = "label10";
+            label10.Size = new Size(68, 20);
+            label10.TabIndex = 2;
+            label10.Text = "Capacity";
             // 
             // label9
             // 
@@ -384,30 +408,11 @@
             label2.TabIndex = 1;
             label2.Text = "Please review your booking details and confirm your payment.";
             // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.Location = new Point(234, 222);
-            label10.Name = "label10";
-            label10.Size = new Size(68, 20);
-            label10.TabIndex = 2;
-            label10.Text = "Capacity";
-            // 
-            // lblCapacity
-            // 
-            lblCapacity.AutoSize = true;
-            lblCapacity.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblCapacity.Location = new Point(391, 222);
-            lblCapacity.Name = "lblCapacity";
-            lblCapacity.Size = new Size(68, 20);
-            lblCapacity.TabIndex = 2;
-            lblCapacity.Text = "Capacity";
-            // 
             // PaymentForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.MistyRose;
             ClientSize = new Size(541, 754);
             Controls.Add(panel1);
             Controls.Add(label2);
