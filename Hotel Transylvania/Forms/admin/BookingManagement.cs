@@ -134,28 +134,6 @@ namespace Hotel_Transylvania.Forms.admin
             }
         }
 
-        private void dgvBookings_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                selectedBookingId =
-                    Convert.ToInt32(
-                        dgvBookings.Rows[e.RowIndex]
-                        .Cells["Booking ID"].Value
-                    );
-
-                selectedRoomId =
-                    Convert.ToInt32(
-                        dgvBookings.Rows[e.RowIndex]
-                        .Cells["Room ID"].Value
-                    );
-
-                cmbRoom.Text =
-                    dgvBookings.Rows[e.RowIndex]
-                    .Cells["Room Number"].Value.ToString();
-            }
-        }
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
 
@@ -275,6 +253,28 @@ namespace Hotel_Transylvania.Forms.admin
         {
             ClearFields();
             LoadBookings();
+        }
+
+        private void dgvBookings_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                selectedBookingId =
+                    Convert.ToInt32(
+                        dgvBookings.Rows[e.RowIndex]
+                        .Cells["Booking ID"].Value
+                    );
+
+                selectedRoomId =
+                    Convert.ToInt32(
+                        dgvBookings.Rows[e.RowIndex]
+                        .Cells["Room ID"].Value
+                    );
+
+                cmbRoom.Text =
+                    dgvBookings.Rows[e.RowIndex]
+                    .Cells["Room Number"].Value.ToString();
+            }
         }
     }
 }

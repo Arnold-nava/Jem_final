@@ -154,34 +154,6 @@ namespace Hotel_Transylvania.Forms.admin
             }
         }
 
-        private void dgvRooms_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                selectedRoomId = Convert.ToInt32(
-                    dgvRooms.Rows[e.RowIndex].Cells["Room ID"].Value
-                );
-
-                txtRoomNumber.Text =
-                    dgvRooms.Rows[e.RowIndex].Cells["Room Number"].Value.ToString();
-
-                cmbStatus.Text =
-                    dgvRooms.Rows[e.RowIndex].Cells["Status"].Value.ToString();
-
-                string tierName =
-                    dgvRooms.Rows[e.RowIndex].Cells["Room Tier"].Value.ToString();
-
-                for (int i = 0; i < cmbRoomTier.Items.Count; i++)
-                {
-                    if (cmbRoomTier.Items[i].ToString().Contains(tierName))
-                    {
-                        cmbRoomTier.SelectedIndex = i;
-                        break;
-                    }
-                }
-            }
-        }
-
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (selectedRoomId == 0)
@@ -312,6 +284,34 @@ namespace Hotel_Transylvania.Forms.admin
             LoginForm frm = new LoginForm();
             frm.Show();
             this.Hide();
+        }
+
+        private void dgvRooms_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                selectedRoomId = Convert.ToInt32(
+                    dgvRooms.Rows[e.RowIndex].Cells["Room ID"].Value
+                );
+
+                txtRoomNumber.Text =
+                    dgvRooms.Rows[e.RowIndex].Cells["Room Number"].Value.ToString();
+
+                cmbStatus.Text =
+                    dgvRooms.Rows[e.RowIndex].Cells["Status"].Value.ToString();
+
+                string tierName =
+                    dgvRooms.Rows[e.RowIndex].Cells["Room Tier"].Value.ToString();
+
+                for (int i = 0; i < cmbRoomTier.Items.Count; i++)
+                {
+                    if (cmbRoomTier.Items[i].ToString().Contains(tierName))
+                    {
+                        cmbRoomTier.SelectedIndex = i;
+                        break;
+                    }
+                }
+            }
         }
     }
 }

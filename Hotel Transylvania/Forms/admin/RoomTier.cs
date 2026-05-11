@@ -63,17 +63,6 @@ namespace Hotel_Transylvania.Forms.admin
             }
         }
 
-        private void dgvRoomTiers_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                selectedTierId = Convert.ToInt32(dgvRoomTiers.Rows[e.RowIndex].Cells["ID"].Value);
-                cmbRoomTier.Text = dgvRoomTiers.Rows[e.RowIndex].Cells["Room Tier"].Value.ToString();
-                txtPrice.Text = dgvRoomTiers.Rows[e.RowIndex].Cells["Price"].Value.ToString();
-                txtCapacity.Text = dgvRoomTiers.Rows[e.RowIndex].Cells["Capacity"].Value.ToString();
-            }
-        }
-
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (selectedTierId == 0)
@@ -206,6 +195,34 @@ namespace Hotel_Transylvania.Forms.admin
         {
             LoadTierCombo();
             LoadRoomTiers();
+        }
+
+        private void dgvRoomTiers_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                selectedTierId = Convert.ToInt32(
+                    dgvRoomTiers.Rows[e.RowIndex].Cells["ID"].Value
+                );
+
+                string tierName =
+                    dgvRoomTiers.Rows[e.RowIndex].Cells["Room Tier"].Value.ToString();
+
+                for (int i = 0; i < cmbRoomTier.Items.Count; i++)
+                {
+                    if (cmbRoomTier.Items[i].ToString().Contains(tierName))
+                    {
+                        cmbRoomTier.SelectedIndex = i;
+                        break;
+                    }
+                }
+
+                txtPrice.Text =
+                    dgvRoomTiers.Rows[e.RowIndex].Cells["Price"].Value.ToString();
+
+                txtCapacity.Text =
+                    dgvRoomTiers.Rows[e.RowIndex].Cells["Capacity"].Value.ToString();
+            }
         }
     }
 }

@@ -84,6 +84,7 @@
             dgvRoomTiers.Name = "dgvRoomTiers";
             dgvRoomTiers.Size = new Size(457, 478);
             dgvRoomTiers.TabIndex = 1;
+            dgvRoomTiers.CellClick += dgvRoomTiers_CellClick_1;
             // 
             // btnClear
             // 

@@ -238,6 +238,7 @@
             dgvRooms.Name = "dgvRooms";
             dgvRooms.Size = new Size(457, 478);
             dgvRooms.TabIndex = 1;
+            dgvRooms.CellClick += dgvRooms_CellClick_1;
             // 
             // label7
             // 

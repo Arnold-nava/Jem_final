@@ -184,11 +184,6 @@ namespace Hotel_Transylvania.Forms.payments
 
         private void btnPayNow_Click(object sender, EventArgs e)
         {
-            if (txtFullName.Text.Trim() == "" || txtEmail.Text.Trim() == "")
-            {
-                MessageBox.Show("Please enter full name and email.");
-                return;
-            }
 
             SaveBooking();
         }

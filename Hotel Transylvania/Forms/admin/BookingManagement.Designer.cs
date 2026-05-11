@@ -182,6 +182,7 @@
             dgvBookings.Name = "dgvBookings";
             dgvBookings.Size = new Size(506, 478);
             dgvBookings.TabIndex = 1;
+            dgvBookings.CellClick += dgvBookings_CellClick_1;
             // 
             // label7
             // 

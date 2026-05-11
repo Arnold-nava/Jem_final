@@ -32,9 +32,6 @@
             label1 = new Label();
             panel1 = new Panel();
             btnPayNow = new Button();
-            txtPhoneNumber = new TextBox();
-            txtEmail = new TextBox();
-            txtFullName = new TextBox();
             panel2 = new Panel();
             label11 = new Label();
             lblTotalAmount = new Label();
@@ -53,10 +50,6 @@
             lblRoomType = new Label();
             label4 = new Label();
             picRoom = new PictureBox();
-            label19 = new Label();
-            label18 = new Label();
-            label17 = new Label();
-            label16 = new Label();
             label3 = new Label();
             label2 = new Label();
             panel1.SuspendLayout();
@@ -96,9 +89,6 @@
             // 
             panel1.BackColor = Color.WhiteSmoke;
             panel1.Controls.Add(btnPayNow);
-            panel1.Controls.Add(txtPhoneNumber);
-            panel1.Controls.Add(txtEmail);
-            panel1.Controls.Add(txtFullName);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(dtpCheckOut);
             panel1.Controls.Add(dtpCheckIn);
@@ -115,14 +105,10 @@
             panel1.Controls.Add(lblRoomType);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(picRoom);
-            panel1.Controls.Add(label19);
-            panel1.Controls.Add(label18);
-            panel1.Controls.Add(label17);
-            panel1.Controls.Add(label16);
             panel1.Controls.Add(label3);
             panel1.Location = new Point(15, 114);
             panel1.Name = "panel1";
-            panel1.Size = new Size(514, 614);
+            panel1.Size = new Size(514, 483);
             panel1.TabIndex = 2;
             // 
             // btnPayNow
@@ -131,40 +117,13 @@
             btnPayNow.FlatStyle = FlatStyle.Flat;
             btnPayNow.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnPayNow.ForeColor = SystemColors.ButtonHighlight;
-            btnPayNow.Location = new Point(15, 530);
+            btnPayNow.Location = new Point(13, 402);
             btnPayNow.Name = "btnPayNow";
             btnPayNow.Size = new Size(487, 51);
             btnPayNow.TabIndex = 6;
             btnPayNow.Text = "Pay Now";
             btnPayNow.UseVisualStyleBackColor = false;
             btnPayNow.Click += btnPayNow_Click;
-            // 
-            // txtPhoneNumber
-            // 
-            txtPhoneNumber.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtPhoneNumber.Location = new Point(182, 481);
-            txtPhoneNumber.Name = "txtPhoneNumber";
-            txtPhoneNumber.PlaceholderText = "Enter Phone Number";
-            txtPhoneNumber.Size = new Size(320, 27);
-            txtPhoneNumber.TabIndex = 5;
-            // 
-            // txtEmail
-            // 
-            txtEmail.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtEmail.Location = new Point(182, 437);
-            txtEmail.Name = "txtEmail";
-            txtEmail.PlaceholderText = "Enter Email Address";
-            txtEmail.Size = new Size(320, 27);
-            txtEmail.TabIndex = 5;
-            // 
-            // txtFullName
-            // 
-            txtFullName.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtFullName.Location = new Point(182, 398);
-            txtFullName.Name = "txtFullName";
-            txtFullName.PlaceholderText = "Enter Full Name";
-            txtFullName.Size = new Size(320, 27);
-            txtFullName.TabIndex = 5;
             // 
             // panel2
             // 
@@ -344,50 +303,6 @@
             picRoom.TabIndex = 1;
             picRoom.TabStop = false;
             // 
-            // label19
-            // 
-            label19.AutoSize = true;
-            label19.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label19.ForeColor = Color.Black;
-            label19.Location = new Point(15, 488);
-            label19.Name = "label19";
-            label19.Size = new Size(117, 20);
-            label19.TabIndex = 0;
-            label19.Text = "Phone NUmber";
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label18.ForeColor = Color.Black;
-            label18.Location = new Point(15, 444);
-            label18.Name = "label18";
-            label18.Size = new Size(108, 20);
-            label18.TabIndex = 0;
-            label18.Text = "Email Address";
-            // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label17.ForeColor = Color.Black;
-            label17.Location = new Point(15, 405);
-            label17.Name = "label17";
-            label17.Size = new Size(80, 20);
-            label17.TabIndex = 0;
-            label17.Text = "Full Name";
-            // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label16.ForeColor = Color.Purple;
-            label16.Location = new Point(13, 376);
-            label16.Name = "label16";
-            label16.Size = new Size(139, 20);
-            label16.TabIndex = 0;
-            label16.Text = "Guest Information";
-            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -413,7 +328,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MistyRose;
-            ClientSize = new Size(541, 754);
+            ClientSize = new Size(541, 612);
             Controls.Add(panel1);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -444,9 +359,6 @@
         private PictureBox picRoom;
         private Label label3;
         private Label label2;
-        private TextBox txtPhoneNumber;
-        private TextBox txtEmail;
-        private TextBox txtFullName;
         private Panel panel2;
         private Label label11;
         private Label lblTotalAmount;
@@ -456,10 +368,6 @@
         private Label lblPrice;
         private Label lblRoomNumber;
         private Label lblRoomType;
-        private Label label19;
-        private Label label18;
-        private Label label17;
-        private Label label16;
         private Button btnPayNow;
         private Label lblCapacity;
         private Label label10;
